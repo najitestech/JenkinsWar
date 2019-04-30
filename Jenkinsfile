@@ -39,7 +39,7 @@ pipeline {
           steps {
             //sh 'ssh 35.196.97.240 "sudo ansible-playbook /home/jenkins/ansible/verify.yml"'
             //sh 'ssh jenkins@35.196.97.240 "rm /home/jenkins/ansible/*verify*"'
-            sh 'mvn clean  
+            sh 'mvn clean'
           }
         } 
       }  
