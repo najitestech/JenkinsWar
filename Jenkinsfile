@@ -29,8 +29,7 @@ pipeline {
         stage('Deploy Stage') {
           steps {
             withMaven(maven : 'maven-3.6.1') {
-                //sh 'ssh 34.74.207.1 "mkdir /var/lib/jenkins/maven-project"'
-                //sh 'scp ./verify.yml jenkins@35.196.97.240:/home/jenkins/ansible' 
+                //sh 'scp target/ jenkins@35.196.97.240:/home/jenkins/ansible' 
                 //sh 'scp -r ./* 34.74.207.1:/var/lib/jenkins/maven-project'
                 sh 'mvn deploy @host'
             }
