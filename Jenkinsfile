@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-      hosts = "32.44.55.245" 
+      tomcat-server = "35.237.116.77" 
     }
     
     stages {
@@ -29,9 +29,9 @@ pipeline {
         stage('Deploy Stage') {
           steps {
             withMaven(maven : 'maven-3.6.1') {
-                //sh 'scp target/ jenkins@35.196.97.240:/home/jenkins/ansible' 
+                sh 'scp target/JenkinsWar.war http://35.237.116.77:8080' 
                 //sh 'scp -r ./* 34.74.207.1:/var/lib/jenkins/maven-project'
-                sh 'mvn deploy @host'
+                //sh 'mvn deploy @host'
             }
           }
         } 
