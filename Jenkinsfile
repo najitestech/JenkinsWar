@@ -29,9 +29,9 @@ pipeline {
         stage('Deploy Stage') {
           steps {
             withMaven(maven : 'maven-3.6.1') {
-                sh 'scp target/JenkinsWar.war http://35.237.116.77:8080' 
+                //sh 'scp target/JenkinsWar.war http://35.237.116.77:8080' 
                 //sh 'scp -r ./* 34.74.207.1:/var/lib/jenkins/maven-project'
-                //sh 'mvn deploy @host'
+                sh 'mvn deploy http://35.237.116.77:8080'
             }
           }
         } 
