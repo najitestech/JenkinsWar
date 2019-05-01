@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-      tomcatserver = "35.237.116.77" 
+      tomcatserver = "192.168.0.21" 
     }
     
     stages {
