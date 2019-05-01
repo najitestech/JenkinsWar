@@ -7,12 +7,12 @@ pipeline {
     stages {
         stage('Compile Stage') {
           steps {
-            withMaven(maven : 'maven-3.6.1') {
+            //withMaven(maven : 'maven-3.6.1') {
                 //sh 'mvn clean compile'
                 sh 'echo test'
             }
           }
-        }
+        //}
         stage('Testing Stage') {
           steps {
             withMaven(maven : 'maven-3.6.1') {
