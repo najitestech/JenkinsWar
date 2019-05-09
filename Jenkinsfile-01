@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+        docker { image 'ubuntu' }
+    }
     environment {
       tomcatserver = '192.168.0.21'
     }
@@ -7,9 +9,11 @@ pipeline {
     stages {
         stage('Aqua Scanner') {
           steps {
-            aquaMicroscanner imageName: '', notCompliesCmd: '', onDisallowed: 'ignore', outputFormat: 'json'
+            aquaMicroscanner imageName: '', ubuntu: '', onDisallowed: 'ignore', outputFormat: 'json'
                 sh ''
             }
           }
         }
       }  
+
+#notCompliesCmd
