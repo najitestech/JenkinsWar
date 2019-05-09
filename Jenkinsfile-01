@@ -5,11 +5,16 @@ pipeline {
     }
     
     stages {
-        stage('Aqua Scanner') {
+        stage('Stage1') {
           steps {
             //aquaMicroscanner imageName: 'alpine:latest', notCompliesCmd: 'exit 1', onDisallowed: 'ignore', outputFormat: 'json'
                 sh 'ssh root@$docker "docker ps -a"'
             }
           }
+    stage('Stage2') {
+          steps {
+              sh 'ssh root@$docker "docker images"'
+            }
+          }      
         }
       }
