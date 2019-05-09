@@ -20,6 +20,11 @@ pipeline {
           steps {
               sh 'ssh root@$docker "docker pull nginx"'
             }
-          }      
+          }
+    stage('Image Check') {
+          steps {
+              sh 'ssh root@$docker "docker images"'
+            }
+          }       
         }
       }
