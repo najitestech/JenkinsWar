@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Aqua Scanner') {
           steps {
-            aquaMicroscanner imageName: 'alpine', notCompliesCmd: 'exit 1', onDisallowed: 'ignore', outputFormat: 'json'
+            aquaMicroscanner imageName: 'alpine:latest', notCompliesCmd: 'exit 1', onDisallowed: 'ignore', outputFormat: 'json'
                 sh 'echo success'
             }
           }
