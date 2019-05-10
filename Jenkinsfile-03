@@ -1,0 +1,20 @@
+node {
+    stage("clone"){
+        sh "echo clone"
+    }
+    stage("Unit Test"){
+        sh "echo Unit Test"
+    }
+    stage("Build"){
+        sh "echo Build"
+    }
+    stage("Aqua Microscanner"){
+        aquaMicroscanner imageName: 'alpine:latest', notCompliesCmd: 'exit 1', onDisallowed: 'ignore', outputFormat: 'json'
+    }
+    stage("Integration Test"){
+        sh "echo Push Image"
+    }
+    stage("Deploy"){
+        sh "echo Deploy Image"
+    }
+}
