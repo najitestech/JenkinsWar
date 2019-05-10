@@ -1,5 +1,5 @@
-# getting base image Ubuntu
-FROM ubuntu
+# getting base image alpine
+FROM alpine
 # MAINTAINER najite <najites443@gmail.com>
 RUN apt-get update
 CMD ["echo", "Hello from my Second dcoker image!!"]
