@@ -15,16 +15,22 @@ pipeline {
           steps {
               sh 'ssh root@$docker "docker images"'
             }
-          } 
+          }
+    stage('Copy Dockerfile') {
+          steps {
+              sh 'scp ./Dockerfile root@$docker:/'
+            }
+          }       
     stage('Docker pull nginx') {
           steps {
-              sh 'ssh root@$docker "docker pull nginx"'
+              //sh 'ssh root@$docker "docker pull nginx"'
+              sh 'ssh root@$docker "docker build -f /Dockerfile
             }
           }
     stage('Image Check') {
           steps {
               sh 'ssh root@$docker "docker images"'
-              sh 'ssh root@$docker "docker rmi 53f3fd8007f7"'
+              //sh 'ssh root@$docker "docker rmi 53f3fd8007f7"'
             }
           }       
         }
