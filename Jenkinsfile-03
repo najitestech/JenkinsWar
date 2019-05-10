@@ -1,6 +1,7 @@
 node {
     stage("clone"){
         sh "echo clone"
+        sh "whoami"
     }
     stage("Unit Test"){
         sh "echo Unit Test"
