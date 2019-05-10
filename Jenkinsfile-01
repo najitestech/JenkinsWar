@@ -13,7 +13,7 @@ pipeline {
           }
     stage('Creat directory') {
           steps {
-              sh 'ssh root@$docker "mkdir /Dockerfile"'
+              sh 'ssh root@$docker "mkdir /root/Dockerfile"'
             }
           }
     stage('Copy Dockerfile') {
