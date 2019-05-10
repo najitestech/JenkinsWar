@@ -18,7 +18,7 @@ pipeline {
           }
     stage('Copy Dockerfile') {
           steps {
-              sh 'scp ./Dockerfile root@$docker:/'
+              sh 'scp -r ./aquascan root@$docker:/Dockerfile/aquascan'
             }
           }       
     stage('Docker pull nginx') {
