@@ -10,7 +10,7 @@ node {
         sh "echo Build"
     }
     stage("Aqua Microscanner"){
-        aquaMicroscanner imageName: 'alpine:latest', notCompliesCmd: 'exit 1', onDisallowed: 'ignore', outputFormat: 'json'
+        aquaMicroscanner imageName: 'lizrice/struts:vulnerable', notCompliesCmd: 'exit 1', onDisallowed: 'ignore', outputFormat: 'json'
     }
     stage("Integration Test"){
         sh "echo Push Image"
