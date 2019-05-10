@@ -11,14 +11,14 @@ pipeline {
                 sh 'ssh root@$docker "docker ps -a"'
             }
           }
-    stage('Stage2') {
+    stage('Creat directory') {
           steps {
-              sh 'ssh root@$docker "docker images"'
+              sh 'ssh root@$docker "mkdir /Dockerfile"'
             }
           }
     stage('Copy Dockerfile') {
           steps {
-              sh 'scp -R ./aquascan root@$docker:/Dockerfile/aquascan'
+              sh 'scp ./aquascan root@$docker:/Dockerfile/aquascan'
             }
           }       
     stage('Docker pull nginx') {
