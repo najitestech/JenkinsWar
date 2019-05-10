@@ -1,8 +1,16 @@
+FROM debian:jessie-slim
+RUN apt-get update && apt-get -y install ca-certificates
+ADD https://get.aquasec.com/microscanner /
+RUN chmod +x /microscanner
+ARG token
+RUN /microscanner MWI3MTI1NDM4NTM2
+RUN echo "No vulnerabilities!"
+
 # getting base image ubuntu
-FROM ubuntu
+#FROM ubuntu
 # MAINTAINER najite <najites443@gmail.com>
-RUN apt-get update
-CMD ["echo", "Hello from my Second dcoker image!!"]
-ADD https://get.aquasec.com/microscanner/
-RUN chmode +x /microscanner
-RUN /microscanner MWI3MTI1NDM4NTM2 [--continue-on-failure]
+#RUN apt-get update
+#CMD ["echo", "Hello from my Second dcoker image!!"]
+#ADD https://get.aquasec.com/microscanner/
+#RUN chmode +x /microscanner
+#RUN /microscanner MWI3MTI1NDM4NTM2 [--continue-on-failure]
