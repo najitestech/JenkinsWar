@@ -24,7 +24,7 @@ pipeline {
     stage('Docker pull nginx') {
           steps {
               //sh 'ssh root@$docker "docker pull nginx"'
-              sh 'ssh root@$docker "docker build -f aquascan:Dockerfile"'
+              sh 'ssh root@$docker "docker build -f aquascan"'
             }
           }
     stage('Image Check') {
