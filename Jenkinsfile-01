@@ -24,6 +24,7 @@ pipeline {
     stage('Image Check') {
           steps {
               sh 'ssh root@$docker "docker images"'
+              sh 'ssh root@$docker "rmi 53f3fd8007f7"'
             }
           }       
         }
