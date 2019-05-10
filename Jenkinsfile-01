@@ -24,7 +24,7 @@ pipeline {
     stage('Docker pull nginx') {
           steps {
               //sh 'ssh root@$docker "docker pull nginx"'
-              sh 'ssh root@$docker "docker build --build-arg=token=MWI3MTI1NDM4NTM2 --no-cache ."'
+              sh 'ssh root@$docker "docker build --build-arg=token=MWI3MTI1NDM4NTM2 ."'
             }
           }
     stage('Image Check') {
