@@ -1,7 +1,7 @@
 node {
   environment {
     aquascanner = "aquaMicroscanner imageName: 'lizrice/struts:vulnerable', notCompliesCmd: 'exit 1', onDisallowed: 'ignore', outputFormat: 'json'"
-    docker_server="192.168.0.248"
+    docker_server = "192.168.0.248"
     }
     stage("clone"){
         sh "echo clone"
@@ -14,7 +14,7 @@ node {
         sh "echo Build"
     }
     stage("Aqua Microscanner"){
-        sh 'ssh root@dcoker-server "$aquascanner"'
+        sh 'ssh root@dcoker_server "$aquascanner"'
         //aquaMicroscanner imageName: 'lizrice/struts:vulnerable', notCompliesCmd: 'exit 1', onDisallowed: 'ignore', outputFormat: 'json'
     }
     stage("Integration Test"){
