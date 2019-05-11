@@ -1,7 +1,7 @@
 node {
   environment {
     aquascanner = "aquaMicroscanner imageName: 'lizrice/struts:vulnerable', notCompliesCmd: 'exit 1', onDisallowed: 'ignore', outputFormat: 'json'"
-    docker-server="192.168.0.248"
+    docker_server="192.168.0.248"
     }
     stage("clone"){
         sh "echo clone"
