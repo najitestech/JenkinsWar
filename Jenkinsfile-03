@@ -1,3 +1,6 @@
+def aquascanner = "aquaMicroscanner imageName: 'lizrice/struts:vulnerable', notCompliesCmd: 'exit 1', onDisallowed: 'ignore', outputFormat: 'json'"
+def docker_server = "192.168.0.248"
+
 node {
   environment {
     aquascanner = "aquaMicroscanner imageName: 'lizrice/struts:vulnerable', notCompliesCmd: 'exit 1', onDisallowed: 'ignore', outputFormat: 'json'"
