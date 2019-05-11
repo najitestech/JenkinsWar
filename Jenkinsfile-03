@@ -2,10 +2,10 @@ def aquascanner="aquaMicroscanner imageName: 'lizrice/struts:vulnerable', notCom
 def docker_server="192.168.0.248"
 
 node {
-  //environment {
-    //aquascanner = "aquaMicroscanner imageName: 'lizrice/struts:vulnerable', notCompliesCmd: 'exit 1', onDisallowed: 'ignore', outputFormat: 'json'"
-   // docker_server = "192.168.0.248"
-   // }
+  environment {
+    aquascanner = "aquaMicroscanner imageName: 'lizrice/struts:vulnerable', notCompliesCmd: 'exit 1', onDisallowed: 'ignore', outputFormat: 'json'"
+    docker_server = "192.168.0.248"
+    }
     stage("clone"){
         sh "echo clone"
         sh "whoami"
