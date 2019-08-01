@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+    environment {
+      tomcatserver = '192.168.0.21'
+    }
+    
+    stages {
+        stage('Compile Stage') {
+          steps {
+            withMaven(maven : 'maven-3.6.1') {
+                sh 'mvn clean compile'
+            }
+          }
+        }
+        stage('Testing Stage') {
+          steps {
+            withMaven(maven : 'maven-3.6.1') {
+                sh 'mvn test'
+            }
+          }  
+        }  
+        stage('Package Stage') {
+          steps {
+            withMaven(maven : 'maven-3.6.1') {
+                 sh 'mvn package'
+              }
+            }  
+          }
+        }
+      }  
