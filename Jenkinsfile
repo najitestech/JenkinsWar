@@ -32,6 +32,7 @@ pipeline {
                 //sh 'scp target/JenkinsWar.war http://35.237.116.77:8080' 
                 //sh 'scp -r ./* 34.74.207.1:/var/lib/jenkins/maven-project'
                 sh 'scp -o StrictHostKeyChecking=no target/*.war root@$tomcatserver:/opt/tomcat/tomcat9/webapps'
+                sh 'curl -uadmin:APAj1tt9wLaFZZpqAzf1Ue5mjWU -T /var/lib/jenkins/.m2/repository/org/jfrog/test/multi/3.7-SNAPSHOT/multi-3.7-SNAPSHOT.pom -H "X-Checksum-Sha1: e1d77f813bddb1e5c5aaa24599ea6b66a2b6b91c" "http://192.168.0.17:8081/artifactory/lib-release-repo/multiX-3.8-SNAPSHOT"'
             }
           }
         } 
