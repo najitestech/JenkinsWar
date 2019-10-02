@@ -18,7 +18,7 @@ node {
     }
     stage("Aqua Microscanner"){
         //sh 'ssh root@192.168.0.248 "aquaMicroscanner imageName: 'najite/terraform-packer:latest', notCompliesCmd: 'exit 1', onDisallowed: 'ignore', outputFormat: 'json'"'
-        //aquaMicroscanner imageName: 'lizrice/struts:vulnerable', notCompliesCmd: 'exit 1', onDisallowed: 'ignore', outputFormat: 'json'
+        aquaMicroscanner imageName: 'najite/terraform-packer:latest', notCompliesCmd: 'exit 1', onDisallowed: 'ignore', outputFormat: 'json'
     }
     stage("Integration Test"){
         sh "echo Push Image"
