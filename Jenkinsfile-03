@@ -1,9 +1,9 @@
-def aquascanner="aquaMicroscanner imageName: 'lizrice/struts:vulnerable', notCompliesCmd: 'exit 1', onDisallowed: 'ignore', outputFormat: 'json'"
+def aquascanner="aquaMicroscanner imageName: 'najite/terraform-packer:latest', notCompliesCmd: 'exit 1', onDisallowed: 'ignore', outputFormat: 'json'"
 def docker_server="192.168.0.248"
 
 node {
   environment {
-    aquascanner = "aquaMicroscanner imageName: 'lizrice/struts:vulnerable', notCompliesCmd: 'exit 1', onDisallowed: 'ignore', outputFormat: 'json'"
+    aquascanner = "aquaMicroscanner imageName: 'najite/terraform-packer:latest', notCompliesCmd: 'exit 1', onDisallowed: 'ignore', outputFormat: 'json'"
     docker_server = "192.168.0.248"
     }
     stage("clone"){
